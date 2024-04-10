@@ -3,7 +3,7 @@ package day02;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ArrayQuiz03 {
+public class ArrayQuiz03_ArrayModify {
 
     public static void main(String[] args) {
 
@@ -25,9 +25,9 @@ public class ArrayQuiz03 {
         while (true) {
             System.out.println("- 수정할 멤버의 이름을 입력하세요.");
             System.out.printf(">> ");
+            // 수정될 멤버의 이름 1개를 저장할 코드
             String targetName = sc.nextLine();
 
-            //탐색 알고리즘
             int index = -1;
             for (int i = 0; i < tvxq.length; i++) {
                 if (targetName.equals(tvxq[i])) {

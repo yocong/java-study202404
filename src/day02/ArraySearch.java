@@ -8,7 +8,7 @@ public class ArraySearch {
         String target = "치킨";
 
         // 탐색 알고리즘
-        int index = -1;
+        int index = -1; // 기본값 설정
         for (int i = 0; i < foods.length; i++) {
             if (target.equals(foods[i])) {
                 index = i;
