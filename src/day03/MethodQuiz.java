@@ -10,46 +10,60 @@ public class MethodQuiz {
         System.out.println(Arrays.toString(foods));
     }
 
-    static String[] push(String str) {
-        String newStr = str;
+    // 사이즈를 조절해서 새 배열을 만드는 함수
+    static String[] makeNewArray(int size) {
+        return new String[foods.length + size];
+    }
 
-        String[] temp = new String[foods.length + 1];
-        for (int i = 0; i < foods.length; i++) {
+    // 기존 데이터를 복사하는 함수
+    static String[] copy(int size) {
+        String[] temp = makeNewArray(size);
+
+        int loopCount = (size >= 0) ? foods.length : temp.length;
+
+        for (int i = 0; i < loopCount; i++) {
             temp[i] = foods[i];
         }
-        temp[temp.length -1] = newStr;
-        foods = temp;
-        temp = null;
-        return foods;
+        return temp;
     }
 
-    static int indexOf(String str) {
-        int index = -1;
-        String target = str;
+    static void push(String newFood) {
+        String[] temp = copy(1);
+
+        temp[temp.length - 1] = newFood;
+        foods = temp;
+//        temp = null; // 생략 가능, 함수 정의시 알아서 null 처리
+    }
+
+    static int indexOf(String food) {
         for (int i = 0; i < foods.length; i++) {
-            if(target.equals(foods[i])) {
-                index = i;
+            if (food.equals(foods[i])) {
+                return i;
             }
         }
-        return index;
+        return -1;
     }
 
+    // foods배열에서 맨 끝 데이터를 삭제하는 함수
+    static void pop() {
+        foods = copy(-1);
 
-    static String[] remove(String str) {
+    }
+
+    static String[] remove(String deleteTarget) {
         int index = -1;
-        String menu = str;
 
         for (int i = 0; i < foods.length; i++) {
-            if(menu.equals(foods[i])) {
+            if (deleteTarget.equals(foods[i])) {
                 index = i;
                 for (int j = i; j < foods.length - 1; j++) {
-                    foods[j] = foods[j+1];
+                    foods[j] = foods[j + 1];
                 }
                 break;
             }
         }
-        if(index == -1) {
-            System.out.printf("해당 메뉴(%s)은 존재하지 않습니다.", menu);
+        if (index == -1) {
+            System.out.printf("해당 메뉴(%s)은 존재하지 않습니다.", deleteTarget);
         } else {
             String[] temp = new String[foods.length - 1];
             for (int k = 0; k < temp.length; k++) {
@@ -58,36 +72,31 @@ public class MethodQuiz {
             foods = temp;
             temp = null;
         }
-            return foods;
+        return foods;
     }
 
-    static boolean include(String str) {
-        String menu = str;
-        for (int i = 0; i < foods.length; i++) {
-            if (menu.equals(foods[i])) {
-                return true;
-            }
-        }
-        return false;
+    static boolean include(String searchTarget) {
+        return indexOf(searchTarget) != -1;
     }
 
-    static void insert(int n, String str) {
-
-        String[] temp = new String[foods.length + 1];
-        for (int i = 0; i < foods.length; i++) {
-            temp[i] = foods[i];
+    static void insert(int targetIndex, String newFood) {
+        if (isOufOfBounds(targetIndex)) return;
+        String[] temp = copy(1);
+        for (int i = temp.length - 1; i > targetIndex; i--) {
+            temp[i] = temp[i - 1];
         }
-
-        for (int i = temp.length - 1; i > n ; i--) {
-            temp[i] = temp[i-1];
-        }
-        temp[n] = str;
+        temp[targetIndex] = newFood;
         foods = temp;
-        temp = null;
     }
 
-    static void modify(int n, String str) {
-        foods[n] = str;
+    static void modify(int targetIndex, String newFood) {
+        // 범위 밖이면 종료
+        if (isOufOfBounds(targetIndex)) return;
+        foods[targetIndex] = newFood;
+    }
+
+    static boolean isOufOfBounds(int targetIndex) {
+        return targetIndex < 0 || targetIndex > foods.length - 1;
     }
 
     public static void main(String[] args) {
@@ -104,6 +113,7 @@ public class MethodQuiz {
         int index2 = indexOf("라면땅");
         System.out.println("index2 = " + index2);
 
+//        pop();
         remove("치킨");
         printFoods();
 
