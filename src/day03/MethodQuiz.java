@@ -50,29 +50,13 @@ public class MethodQuiz {
 
     }
 
-    static String[] remove(String deleteTarget) {
-        int index = -1;
-
-        for (int i = 0; i < foods.length; i++) {
-            if (deleteTarget.equals(foods[i])) {
-                index = i;
-                for (int j = i; j < foods.length - 1; j++) {
-                    foods[j] = foods[j + 1];
-                }
-                break;
-            }
+    static void remove(String deleteTarget) {
+        int index = indexOf(deleteTarget);
+        if (index == -1) return;
+        for (int i = index; i < foods.length - 1; i++) {
+            foods[i] = foods[i+1];
         }
-        if (index == -1) {
-            System.out.printf("해당 메뉴(%s)은 존재하지 않습니다.", deleteTarget);
-        } else {
-            String[] temp = new String[foods.length - 1];
-            for (int k = 0; k < temp.length; k++) {
-                temp[k] = foods[k];
-            }
-            foods = temp;
-            temp = null;
-        }
-        return foods;
+        pop();
     }
 
     static boolean include(String searchTarget) {
