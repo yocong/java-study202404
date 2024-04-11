@@ -21,4 +21,5 @@ public class Main {
         System.out.println(x > 10 && (y / 0 == 10)); //false
         System.out.println(x > 10 || y < 30); //true
     }
+
 }
