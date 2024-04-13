@@ -14,8 +14,8 @@ public class StringCompare {
 //        System.out.println(myName);
 //        System.out.println(inputName);
 //
-//        // == --> 객체의 주소값을 비교 (다르다)
-//        // equals() --> 한글자씩 반복문을 통해 돌면서 확인 (같다)
+//        // == --> 객체의 주소값을 비교
+//        // equals() --> 한글자씩 반복문을 통해 돌면서 문자를 확인
 //        if (myName.equals(inputName)) {
 //            System.out.println("두 문자열이 같아!");
 //        } else {
