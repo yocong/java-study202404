@@ -28,5 +28,6 @@ public class Test {
         Member newMember = new Member("awef@afw.com", "4321", "찰떡이", "남성", 12);
         mr.addNewMember(newMember); // mr에서 추가
         mv.showMembers(); // mv에서 출력
+
     }
 }

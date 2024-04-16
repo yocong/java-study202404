@@ -18,6 +18,7 @@ public class Member {
     // 시스템이 생성하는 데이터: 회원번호, 회원가입일자
     // 사용자가 제공하는 데이터: 이메일, 패스워드, 이름, 성별, 나이
 
+    // 사용자가 제공해야하는 것은 생성자의 파라미터로 외부에서 입력하게 만듦
     Member(String email, String password, String memberName, String gender, int age) {
         this.id = 1;
         this.regDate = LocalDate.now(); // 현재 시간을 읽어서 처리
@@ -29,11 +30,14 @@ public class Member {
         this.age = age;
     }
 
-
-
-    // toString: 객체의 정보를 출력할 수 있음 (자동호출)
+    // toString: 객체의 정보를 출력할 수 있음 (자동호출되므로 따로 적어주지 않아도됨)
     public String toString() {
         return String.format("# 이름: %s, 이메일: %s, 나이: %d세, 성별: %s, 가입일: %s"
                 , this.memberName, this.email, this.age, this.gender, this.regDate);
+    }
+
+    // 회원의 비밀번호를 수정하는 메서드
+    void changePassword(String newPassword) {
+        this.password = newPassword;
     }
 }
