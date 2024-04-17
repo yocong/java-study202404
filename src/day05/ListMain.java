@@ -18,6 +18,7 @@ public class ListMain {
             };
          */
 
+        // 객체 생성시 각기 다른 sArr이 생성
         StringList foods = new StringList();
         StringList userNames = new StringList();
 

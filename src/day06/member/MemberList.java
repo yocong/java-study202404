@@ -5,7 +5,7 @@ package day06.member;
 //      MemberRepository에서 간단하게 사용가능!
 public class MemberList {
 
-    Member[] mArr;
+    private Member[] mArr;
 
     MemberList() {
         this.mArr = new Member[0]; // 빈 배열
@@ -32,6 +32,7 @@ public class MemberList {
     // 한 명의 회원 정보 얻기
     Member get(String email) {
         int index = findIndex(email);
+        if (index == -1) return null;
         return get(index);
     }
     Member get(int index) {
@@ -39,7 +40,7 @@ public class MemberList {
     }
 
     // 맨 끝 제거
-    Member pop() {
+    private Member pop() {
         // 맨 끝 회원 백업
         Member lastMember = mArr[mArr.length - 1];
         Member[] temp = new Member[mArr.length - 1];
@@ -51,7 +52,7 @@ public class MemberList {
     }
 
     // 회원 정보 삭제
-    Member remove(int index) {
+    public Member remove(int index) {
         // 삭제 대상 백업
         Member removedMember = mArr[index];
         for (int i = index; i < mArr.length - 1; i++) {

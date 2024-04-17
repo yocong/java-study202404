@@ -144,19 +144,20 @@ public class MemberView {
     public void restoreMember() {
         String inputEmail = si.input("# 복구 대상의 이메일: ");
 
-        // 이메일이 일치하는 회원이 있는지 조회
-        Member foundMember = mr.findMemberByEmail(inputEmail);
+        // 이메일이 일치하는 회원이 복구리스트에 있는지 조회
+        Member foundMember = mr.findRestoreMemberByEmail(inputEmail);
 
         if (foundMember != null) {
-            // 복구 진행
             // 패스워드 검사
             String inputPw = si.input("# 비밀번호: ");
             if (inputPw.equals(foundMember.password)) {
-                mr.restoreMember(inputEmail);
+                mr.restore(inputEmail);
                 System.out.println("# 회원 복구 처리되었습니다.");
             } else {
                 System.out.println("# 비밀번호가 일치하지 않습니다. 복구를 취소합니다.");
             }
+        } else {
+            System.out.println("\n# 해당 회원은 복구대상이 아닙니다.");
         }
     }
 }
