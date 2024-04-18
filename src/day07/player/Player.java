@@ -7,7 +7,12 @@ public class Player extends Object {
     String nickname;
     int level;
     int hp;
-    int exp;
+
+    Player(String nickname) {
+        this.nickname = nickname;
+        this.level = 1;
+        this.hp = 50;
+    }
 
     // 현재 캐릭터 정보를 출력
     public void showStatus() {
