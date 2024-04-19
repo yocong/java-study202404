@@ -21,4 +21,6 @@ public class Player extends Object {
         System.out.println("# level: " + this.level);
         System.out.println("# hp: " + this.hp);
     }
+
+
 }
