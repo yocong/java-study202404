@@ -46,7 +46,7 @@ public class ArrayBasic {
         System.out.println(Arrays.toString(numbers));
 
         // 배열 한번에 만들기 (변수선언 + 객체생성)
-        int[] pointList = new int[] {10, 20, 30, 40};
+        int[] pointList = new int[] {10, 20, 30, 40}; // int[] pointList = {10, 20, 30, 40};
         System.out.println(Arrays.toString(pointList));
 
         // 만약 배열변수 선언과 동시에 값을 초기화 한다면
@@ -54,7 +54,7 @@ public class ArrayBasic {
         // -> 변수 처음에 만들때만 생략 가능, 수정 등에는 생략 불가능
         String[] pets = {"멍멍이", "짹짹이", "콩수니"};
         System.out.println(Arrays.toString(pets));
-        pets = new String[] {"zzz", "fff"};
+        pets = new String[] {"zzz", "fff"}; // 생성할 때 이외에는 new String[] 붙임
         System.out.println(Arrays.toString(pets));
 
         //  배열을 생성만하고 값을 안넣으면?
