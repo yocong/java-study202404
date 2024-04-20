@@ -6,7 +6,7 @@ public class ArrayInsert {
     public static void main(String[] args) {
 
         int[] arr = {10, 50, 90, 100, 150};
-        int newNumber = 66;
+        int newNumber = 66; // 넣고싶은 값
         int targetIndex = 2; // 들어가고싶은 인덱스
 
         // 50과 90 사이에 66을 삽입!

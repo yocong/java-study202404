@@ -7,6 +7,7 @@ public class DancerMain {
     public static void main(String[] args) {
 
         // 설계도(클래스)를 통해 객체를 찍어냄(생성)
+        // Dancer 클래스를 참조하고있는 kim이라는 변수에 객체 생성
         Dancer kim = new Dancer();
 
         // 객체의 속성 부여
@@ -31,15 +32,18 @@ public class DancerMain {
         park.dance();
         System.out.println("==================================");
 
+        // 기본 생성자를 호출한 객체 생성
         Dancer hong = new Dancer();
         hong.dance();
         System.out.println("==================================");
 
+        // 파라미터로 댄서이름을 받는 생성자를 호출한 객체 생성
         Dancer choi = new Dancer("최폭풍");
         choi.dance();
         choi.introduce();
         System.out.println("==================================");
 
+        // 댄서이름과 크루이름을 받는 생성자를 호출한 객체 생성
         Dancer nanana = new Dancer("냐냐냥", "시골크루");
         nanana.dance();
         nanana.introduce();

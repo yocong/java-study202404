@@ -5,7 +5,7 @@ public class TypeCasting {
 
         //  암묵적 형 변환 - 작은 사이즈 -> 큰 사이즈
         byte a = 100; // 1byte
-        int b = a; // 4byte
+        int b = a; // 4byte, int > byte 이기 때문에 byte 타입인 a는 b에 암묵적 형변환으로 들어갈 수 있음
 
         System.out.println("b = " + b);
 

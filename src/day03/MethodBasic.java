@@ -18,6 +18,7 @@ public class MethodBasic {
 
     // n개의 정수를 전달받아 그 총합을 반환하는 함수
     // int[] numbers 대신에 int... 으로 사용가능 (스프레드)
+    // ...은 가변 변수라서 넣고 싶은 길이의 배열을 자유롭게 넣을 수 있음
     static int addAll(int... numbers) {
         int total = 0;
         for (int n : numbers) {

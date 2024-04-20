@@ -39,7 +39,7 @@ public class Player {
 
 
     // 메서드
-    void attack(Player this, Player target) {
+    void attack(Player target) {
         System.out.println("this = " + this);
         System.out.println("target = " + target);
         // 맞은 player가 체력을 10 감소시킬 것임

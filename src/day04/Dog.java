@@ -22,6 +22,7 @@ public class Dog {
         injection = true; // 필드 - 만들었던 것 사용하는 것이기 때문에
     }
 
+    // 기본 생성자
     Dog() {
         System.out.println("1번 생성자 호출!");
     }

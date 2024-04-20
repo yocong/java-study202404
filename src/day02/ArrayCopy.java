@@ -6,7 +6,7 @@ public class ArrayCopy {
     public static void main(String[] args) {
 
         String[] pets = {"멍멍이", "야옹이", "짹짹이"};
-//        String[] petsCopy = pets; // 배열 복사가 아니라 배열 주소복사
+//        String[] petsCopy = pets; // 배열 복사가 아니라 배열 주소복사가돼서 원본 = 복사본이 됨
 
         // 배열 복사 : 새로운 배열을 생성 후 반복문을 통해 값을 넣어줌
         String[] petsCopy = new String[pets.length];
