@@ -2,7 +2,7 @@ package day06.member;
 
 import day06.util.SimpleInput;
 
-// 역할: 회원 데이터 관리를 위해 "입력 출력"을 담당함
+// 역할: 회원 데이터 관리를 위해 "입력 출력"을 담당
 public class MemberView {
 
     // 객체의 협력
@@ -15,8 +15,8 @@ public class MemberView {
     }
 
     void showMembers() {
-        System.out.printf("========= 현재 회원 목록 (총 %d명) ==========\n", mr.members.size());
-        for (Member m : mr.members.getMembers()) {
+        System.out.printf("========= 현재 회원 목록 (총 %d명) ==========\n", mr.members.size()); // Repository에 있는 members 배열의 길이 = 총 회원 수
+        for (Member m : mr.members.getMembers()) { // getMembers(): Repository에 있는 members 배열의 전체를 가져옴
             System.out.println(m);
         }
     }

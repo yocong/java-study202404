@@ -2,7 +2,8 @@ package day09.poly.car;
 
 public class Driver {
 
-    // Car타입으로 받으면 다형성을 통해 모두 연결 가능
+    // Car타입으로 받으면 다형성에 의해서 Mustang, Sonata, Tucson 모두 올 수 있음
+    // 다형성이 안된다면 Car car 자리에 Sonata sonata, Tucson tuscon처럼 일일히 만들어줘야 했을 것이다.
     public void drive(Car car) {
 
         String carName = "";

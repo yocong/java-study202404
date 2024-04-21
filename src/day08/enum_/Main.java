@@ -7,8 +7,8 @@ public class Main {
         Pizza pizza = new Pizza();
 
         pizza.orderPizza();
-        pizza.readyPizza();
-        pizza.deliverPizza();
+//        pizza.readyPizza();
+//        pizza.deliverPizza();
 
         System.out.println("pizza.getStatus() = " + pizza.getStatus().getDescription());
         System.out.println("소요 시간: " + pizza.getStatus().getTimeToSetup());

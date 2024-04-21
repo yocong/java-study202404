@@ -27,6 +27,8 @@ public class MemberRepository {
 //        members[1] = new Member("ghi@def.com", "5432", "팥돌이", "남성", 40);
 //        members[2] = new Member("xyz@def.com", "7890", "팥죽이", "여성", 30);
 
+        // members, restoreList는 MemberList 객체
+        // 배열을 직접 다루는 것이 아니라 MemberList 클래스를 통해 간접적으로 배열을 관리, 조작
         this.members = new MemberList();
         members.push(new Member("abc@def.com", "1234", "콩순이", "여성", 50));
         members.push(new Member("ghi@def.com", "5432", "팥돌이", "남성", 40));
