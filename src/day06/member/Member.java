@@ -30,7 +30,7 @@ public class Member {
         this.age = age;
     }
 
-    // toString: 객체의 정보를 출력할 수 있음 (자동호출되므로 따로 적어주지 않아도됨)
+    // toString: 객체의 정보를 출력할 수 있음 (자동호출되므로 따로 호출 필요 X)
     public String toString() {
         return String.format("# 이름: %s, 이메일: %s, 나이: %d세, 성별: %s, 가입일: %s"
                 , this.memberName, this.email, this.age, this.gender, this.regDate);

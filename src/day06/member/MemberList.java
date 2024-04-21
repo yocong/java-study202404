@@ -5,8 +5,12 @@ package day06.member;
 //      MemberRepository에서 간단하게 사용가능!
 public class MemberList {
 
+    // 배열을 필드로 등록
+
+    // Member 배열로 등록했으므로 Member 클래스의 객체만 포함될 수 있음
     private Member[] mArr;
 
+    // 생성자를 통해 배열 초기화
     MemberList() {
         this.mArr = new Member[0]; // 빈 배열
     }
@@ -20,6 +24,7 @@ public class MemberList {
         temp[temp.length - 1] = newMember;
         mArr = temp;
     }
+
     // 인덱스 찾기
     int findIndex(String email) {
         for (int i = 0; i < mArr.length; i++) {
@@ -29,6 +34,7 @@ public class MemberList {
         }
         return -1;
     }
+
     // 한 명의 회원 정보 얻기
     Member get(String email) {
         int index = findIndex(email);
