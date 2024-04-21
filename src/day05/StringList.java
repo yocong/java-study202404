@@ -1,9 +1,12 @@
 package day05;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 // 스트링 배열을 관리하는 객체의 설계도
+
+// 쓰이는 배열들을 필요할 때 마다 생성해서 사용X -> 관리할 수 있는 클래스를 만들어서 사용
+// sArr처럼 하나의 배열 필드를 만들어서 객체 생성할 때 마다 참조해서 사용하면 편리
+// 또한 메서드들을 sArr로 등록해서 통합해서 사용가능하기 때문에 코드도 많이 줄게됨
 public class StringList {
 
     // 스트링 배열을 필드로 등록
@@ -83,8 +86,8 @@ public class StringList {
         return targetData;
     }
     // 중간 삭제 (remove) : 값으로 삭제
+    // 값의 index를 구한 후 -> 위의 remove 메서드로 삭제
     public String remove(String target) {
-        // 위에있는 remove 메서드 불러옴
         return remove(indexOf(target));
     }
 
@@ -112,7 +115,7 @@ public class StringList {
     }
 
     public void clear() {
-        sArr = new String[0];
+        sArr = new String[0]; // 빈 배열
     }
 
     public boolean isEmpty() {
