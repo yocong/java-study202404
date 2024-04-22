@@ -18,7 +18,13 @@ public class LibraryView {
     public void makeNewBookUser() {
         System.out.println("\n# 회원 정보를 입력해주세요.");
         String name = input("# 이름: ");
-        int age = Integer.parseInt(input("# 나이: "));
+        int age = 0;
+        try {
+            age = Integer.parseInt(input("# 나이: "));
+        } catch (NumberFormatException e) {
+            System.out.println("\n# 나이는 숫자로 입력해주세요.");
+            age = Integer.parseInt(input("# 나이: "));
+        }
         Gender gender = inputGender();
 
         // 입력된 데이터를 저장 (repository의 user에게 저장)
