@@ -43,7 +43,16 @@ public class MemberView {
             gender = MemberConstants.FEMALE;
         }
 
-        int age = Integer.parseInt(si.input("- 나이: "));
+
+        int age = 0;
+        while (true) {
+            try {
+                age = Integer.parseInt(si.input("- 나이: "));
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("나이는 숫자로 입력하세요!");
+            }
+        }
 
         // 입력데이터를 기반으로 한명의 회원 객체를 생성
         Member newMember = new Member(email, password, name, gender, age);
