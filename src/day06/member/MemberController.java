@@ -16,6 +16,8 @@ public class MemberController {
     // 메뉴 입력 분기에 따라 할 일을 나눠주는 기능
     void run() {
 
+        mv.load();
+
         while (true) {
             String menuNum = mv.showProgramMenu();
 
