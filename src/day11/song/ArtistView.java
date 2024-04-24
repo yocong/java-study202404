@@ -15,6 +15,8 @@ public class ArtistView {
     // 프로그램 실행
     public static void start() {
 
+        repository.load();
+
         while (true) {
             showMainScreen();
             String menuNum = input(">> ");
@@ -73,6 +75,9 @@ public class ArtistView {
                 System.out.printf("# %s님의 노래목록에 %s곡이 추가되었습니다.", singer, song);
             }
         }
+
+        // 등록된 내용 세이브파일에 저장하기
+        repository.save();
 
         // 노래 리스트 Set 생성
         Set<String> songSet = new HashSet<>();
