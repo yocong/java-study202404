@@ -19,7 +19,7 @@ public class Member {
     // 사용자가 제공하는 데이터: 이메일, 패스워드, 이름, 성별, 나이
 
     // 사용자가 제공해야하는 것은 생성자의 파라미터로 외부에서 입력하게 만듦
-    Member(String email, String password, String memberName, String gender, int age) {
+    public Member(String email, String password, String memberName, String gender, int age) {
         this.id = 1;
         this.regDate = LocalDate.now(); // 현재 시간을 읽어서 처리
 
